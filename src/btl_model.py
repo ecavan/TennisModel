@@ -31,6 +31,8 @@ class TennisBTLModel:
                 if os.path.exists(file_path):
                     try:
                         df = pd.read_excel(file_path)
+                        #####added this
+                        df = df.dropna()
                         df['Year'] = year
                         all_matches.append(df)
                         print(f"Loaded {len(df)} matches from {g} {year}")

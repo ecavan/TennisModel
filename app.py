@@ -24,8 +24,8 @@ def load_model():
     model = TennisBTLModel(data_path)
     ratings_file = os.path.join(parent_dir, "player_ratings.json")
     
-    if os.path.exists(ratings_file):
-        model.load_ratings(ratings_file)
+    if True:
+        model.load_ratings("player_ratings.json")
     else:
         st.warning("Ratings file not found. Building model from scratch...")
         model.load_data('both')
