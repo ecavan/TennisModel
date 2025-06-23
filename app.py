@@ -17,7 +17,7 @@ from src.btl_model import TennisBTLModel
 
 # Page config
 st.set_page_config(
-    page_title="Enhanced Tennis Betting Model",
+    page_title="Tennis Betting Model",
     page_icon="🎾",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -283,16 +283,16 @@ tab1, tab2, tab3 = st.tabs(["🎾 Match Analysis", "🏆 All Betting Markets", "
 
 with tab1:
     # Main prediction interface
-    st.title("🎾 Enhanced Tennis Betting Model")
+    st.title("🎾 Tennis Betting Model")
     
     # Model status indicator
     has_enhanced = hasattr(model, 'surface_expertise') and hasattr(model, 'recent_form')
     if has_enhanced:
-        st.success("✅ Enhanced model loaded with surface expertise and recent form")
+        st.success("✅ model loaded with surface expertise and recent form")
     else:
         st.warning("⚠️ Basic model loaded. For enhanced features, run train_model.py to generate enhanced_player_ratings.json")
     
-    st.markdown("Advanced Elo-based model with tournament integration and comprehensive betting markets")
+    st.markdown("Elo-based model with tournament integration and comprehensive betting markets")
 
     # Sidebar for inputs
     with st.sidebar:
@@ -388,7 +388,7 @@ with tab1:
     if calculate and player1 and player2 and player1 != player2:
         
         # Header
-        st.header(f"🥎 {player1} vs {player2}")
+        st.header(f"{player1} vs {player2}")
         if tournament_name:
             st.subheader(f"🏆 {tournament_name} - {selected_round}")
         else:
@@ -452,7 +452,7 @@ with tab1:
             st.metric(f"{player2} Model Odds", f"{model_odds_p2:.2f}")
         
         # Edge calculation
-        st.subheader("💰 Moneyline Edge Analysis")
+        st.subheader("Edge Analysis")
         
         market_implied_p1 = 1 / market_odds_p1
         market_implied_p2 = 1 / market_odds_p2
@@ -495,7 +495,7 @@ with tab1:
         st.info("👆 Configure match details in the sidebar and click 'Analyze Match' to get predictions")
 
 with tab2:
-    st.header("🏆 Comprehensive Betting Markets")
+    st.header("Betting Markets")
     
     if 'calculate' in locals() and calculate and 'player1' in locals() and 'player2' in locals() and player1 != player2:
         
